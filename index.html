@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Projeto Netflix</title>
+    <!-- Font-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
 
     <!-- Styles-->
     <link rel="stylesheet" href="css/reset.css">
@@ -69,13 +71,75 @@
         </div><!--texto-destaque-->
     </section><!--destaque-->
 
+    <section class="vitrine">
+        <div class="vitrine-flex">
+
+            <div class="vitrine-single-banner">
+                <div class="vitrine-wraper" style="background-image: url(./images/arrow.jpg);"></div>
+            </div>
+
+            <div class="vitrine-single-banner">
+                <div class="vitrine-wraper" style="background-image: url(./images/suits.jpeg);"></div>
+            </div>
+
+            <div class="vitrine-single-banner">
+                <div class="vitrine-wraper" style="background-image: url(./images/arrow.jpg);"></div>
+            </div>
+
+            <div class="vitrine-single-banner">
+                <div class="vitrine-wraper" style="background-image: url(./images/suits.jpeg);"></div>
+            </div>
+
+            <div class="vitrine-single-banner">
+                <div class="vitrine-wraper" style="background-image: url(./images/arrow.jpg);"></div>
+            </div>
+
+            <div class="vitrine-single-banner">
+                <div class="vitrine-wraper" style="background-image: url(./images/suits.jpeg);"></div>
+            </div>
+
+
+        </div><!--vitrine-flex-->
+    </section><!--vitrine-->
 
 
 
 
 
 
-    <script src="https://kit.fontawesome.com/6d5f29807a.js" crossorigin="anonymous"></script>
+
+    <script src="js/jquery.js"></script>
+    <script src="js/slick.min.js"></script>
+
+    <script>
+        $('.vitrine-flex').slick({
+            dots: false,
+            arrows: false,
+            infinite: false,
+            centerMode: false,
+            speed: 1000,
+            slidesToShow: 6,
+            autoplay: true,
+            autoplaySpeed: 3000,
+            pauseOnHover: false,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 3
+                    }
+                }]
+        });
+
+        $('.vitrine-wraper').hover(function () {
+            $(this).css('z-index', '1000');
+        })
+
+        $('.vitrine-wraper').mouseout(function () {
+            $(this).css('z-index', '0');
+        })
+        
+    </script>
 </body>
 
 </html>
